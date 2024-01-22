@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "987999444793",
+    "project_id": "jobsearch-6febc",
+    "storage_bucket": "jobsearch-6febc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987999444793:android:9a27251c5f47c2ef19d2e8",
+        "android_client_info": {
+          "package_name": "com.example.job_search"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4INpcnrIe23qk7IYqhtuiXgpjN8_cJk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
