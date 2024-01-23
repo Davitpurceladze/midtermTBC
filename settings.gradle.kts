@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Job_search"
+rootProject.name = "Meal_search"
 include(":app")
