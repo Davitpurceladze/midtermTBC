@@ -8,10 +8,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.job_search.databinding.FragmentLogInBinding
 import com.example.job_search.presentation.base.BaseFragment
 import com.example.job_search.presentation.event.log_in.LogInEvent
-import com.example.job_search.presentation.screen.registration.RegistrationViewModel
 import com.example.job_search.presentation.state.logIn.LogInState
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -20,7 +18,9 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     private val viewModel: LogInViewModel by viewModels()
 
 
+
     override fun bind() {
+
     }
 
     override fun bindViewActionListeners() {
@@ -53,7 +53,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
     }
 
     private fun handleState(state: LogInState) {
-        println("this is state in Login Fragment -> $state")
+
     }
 
     private fun  logInUser () {

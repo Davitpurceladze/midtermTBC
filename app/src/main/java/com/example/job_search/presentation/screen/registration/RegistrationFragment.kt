@@ -26,6 +26,9 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
 //        binding.btnLogIn.setOnClickListener {
 //            findNavController().navigate(RegistrationFragmentDirections.actionRegistrationFragmentToLogInFragment())
 //        }
+        binding.btnLogIn.setOnClickListener {
+            viewModel.onEvent(RegistrationEvent.NavigateToRegistration)
+        }
 
         binding.btnRegistration.setOnClickListener {
             registerUser()
@@ -51,7 +54,6 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
     }
 
     private fun handleRegistrationState(registrationState: RegistrationState) {
-        println("this is fragment registration State -> $registrationState")
 
     }
 
@@ -66,9 +68,11 @@ class RegistrationFragment : BaseFragment<FragmentRegistrationBinding>(FragmentR
 
     private fun handleNavigationEvents(event: RegistrationViewModel.RegistrationUiEvent) {
         when (event) {
-            is RegistrationViewModel.RegistrationUiEvent.NavigateToLogIn -> findNavController().navigate(
-                RegistrationFragmentDirections.actionRegistrationFragmentToLogInFragment()
-            )
+            is RegistrationViewModel.RegistrationUiEvent.NavigateToLogIn -> {
+                findNavController().navigate(
+                    RegistrationFragmentDirections.actionRegistrationFragmentToLogInFragment()
+                )
+            }
         }
     }
 

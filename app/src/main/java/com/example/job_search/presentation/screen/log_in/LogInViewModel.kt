@@ -30,8 +30,7 @@ class LogInViewModel @Inject constructor(
     private val _logInState = MutableStateFlow(LogInState())
     val logInState: SharedFlow<LogInState> = _logInState.asStateFlow()
 
-//    private val _logInFlow = MutableStateFlow<Resource<FirebaseUser>?>(null)
-//    val loginFlow: StateFlow<Resource<FirebaseUser>?> = _logInFlow
+
 
     private val _uiEvent = MutableSharedFlow<LogInUiEvent>()
     val uiEvent: SharedFlow<LogInUiEvent> get() = _uiEvent
@@ -77,7 +76,6 @@ class LogInViewModel @Inject constructor(
                         _logInState.update { currentState ->
                             currentState.copy(data = it.result)
                         }
-                        println("this is LogIn viewModel and there should be navigation to home fragment")
                         _uiEvent.emit(LogInUiEvent.NavigateToMealsByNameFragment)
 
                     }

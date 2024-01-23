@@ -11,7 +11,7 @@
         android:id="@+id/MealByIngredientsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Meals By Ingredients"
+        android:text="@string/meals_by_ingredients"
         android:textColor="@color/title"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etSearchByIngredient"
         android:layout_width="0dp"
-        android:hint="Search For Meals"
+        android:hint="@string/search_for_meals"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toStartOf="@id/imageSearch"

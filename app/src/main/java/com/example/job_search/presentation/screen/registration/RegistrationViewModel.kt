@@ -36,6 +36,9 @@ class RegistrationViewModel @Inject constructor(
                 email = event.email,
                 password = event.password
             )
+
+            is RegistrationEvent.NavigateToRegistration -> navigateToLogIn()
+
         }
     }
 
@@ -67,7 +70,7 @@ class RegistrationViewModel @Inject constructor(
 
                     is Resource.Success -> {
                         _registrationState.update { currentState -> currentState.copy(data = it.result) }
-                        println("result should print while everything ok")
+
                         _uiEvent.emit(RegistrationUiEvent.NavigateToLogIn)
                     }
 
@@ -80,12 +83,19 @@ class RegistrationViewModel @Inject constructor(
     }
 
     private fun updateErrorMessage(message: String) {
-        _registrationState.update { currentState -> currentState.copy(errorMessage = message)  }
+        _registrationState.update { currentState -> currentState.copy(errorMessage = message) }
+    }
+
+    private fun navigateToLogIn() {
+        viewModelScope.launch {
+            _uiEvent.emit(RegistrationUiEvent.NavigateToLogIn)
+        }
     }
 
 
     sealed interface RegistrationUiEvent {
         object NavigateToLogIn : RegistrationUiEvent
+
     }
 
 

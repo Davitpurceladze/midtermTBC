@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:layout_marginTop="20dp"
         android:textColor="@color/title"
         android:textSize="43sp" />
@@ -21,14 +21,14 @@
         android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email" />
+        android:hint="@string/email" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="Password" />
+        android:hint="@string/password" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnLogIn"
@@ -37,12 +37,12 @@
         android:textSize="21sp"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_style"
-        android:text="Log In" />
+        android:text="@string/log_in" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btnRegistration"
         android:layout_marginTop="30dp"
-        android:text="Registration"
+        android:text="@string/registration"
         android:gravity="center"
         android:textSize="17sp"
         android:textColor="@color/title"

@@ -16,7 +16,6 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMealName"
         android:gravity="center"
-        android:text="title"
         android:textColor="@color/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +26,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNavigateToMealDetailFragment"
-        android:text="Meal Details"
+        android:text="@string/meal_details"
         android:background="@drawable/button_meal_details_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

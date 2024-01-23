@@ -42,11 +42,33 @@
         android:id="@+id/btnFetchRandomMeal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Random Meal"
+        android:text="@string/get_random_meal"
         android:textColor="@color/title"
         android:textSize="19sp"
         android:background="@drawable/button_meal_details_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOpenYoutube"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_meal_details_style"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        android:text="@string/youtube" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btnOpenSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:background="@drawable/button_meal_details_style"
+        android:text="@string/source" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

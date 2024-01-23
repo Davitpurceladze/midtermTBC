@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="meal name"
         android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Category:"
+        android:text="@string/category"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:text="Beef"
         android:textSize="17sp"
         app:layout_constraintStart_toEndOf="@id/tvCategory"
         app:layout_constraintTop_toBottomOf="@id/imgMeal" />
@@ -55,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
-        android:text="Area:"
+        android:text="@string/area"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/tvMealArea"
@@ -66,7 +64,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Vietnamese"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgMeal" />
@@ -77,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Instruction"
+        android:text="@string/instruction"
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,14 +87,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvInstruction">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvMealInstruction"
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dawdawd awdawd awd awd "
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvInstruction" />
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMealInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvInstruction" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpenYoutube"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_meal_details_style"
+                android:text="@string/youtube" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnOpenSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_meal_details_style"
+                android:text="@string/source" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
