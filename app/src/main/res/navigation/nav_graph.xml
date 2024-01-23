@@ -14,8 +14,8 @@
             android:id="@+id/action_logInFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
         <action
-            android:id="@+id/action_logInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_logInFragment_to_mealsByNameFragment"
+            app:destination="@id/mealsByNameFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -29,7 +29,24 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.job_search.HomeFragment"
+        android:name="com.example.job_search.presentation.screen.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_mealsByNameFragment"
+            app:destination="@id/mealsByNameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealsByIngredientsFragment"
+            app:destination="@id/mealsByIngredientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsByIngredientsFragment"
+        android:name="com.example.job_search.presentation.screen.mealsByIngredients.MealsByIngredientsFragment"
+        android:label="fragment_meals_by_ingredients"
+        tools:layout="@layout/fragment_meals_by_ingredients" />
+    <fragment
+        android:id="@+id/mealsByNameFragment"
+        android:name="com.example.job_search.presentation.screen.mealsByName.MealsByNameFragment"
+        android:label="fragment_meals_by_name"
+        tools:layout="@layout/fragment_meals_by_name" />
 </navigation>

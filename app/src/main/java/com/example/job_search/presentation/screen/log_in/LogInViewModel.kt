@@ -78,7 +78,7 @@ class LogInViewModel @Inject constructor(
                             currentState.copy(data = it.result)
                         }
                         println("this is LogIn viewModel and there should be navigation to home fragment")
-                        _uiEvent.emit(LogInUiEvent.NavigateToHome)
+                        _uiEvent.emit(LogInUiEvent.NavigateToMealsByNameFragment)
 
                     }
 
@@ -103,7 +103,7 @@ class LogInViewModel @Inject constructor(
 
 
     sealed interface LogInUiEvent {
-        object NavigateToHome : LogInUiEvent
+        object NavigateToMealsByNameFragment : LogInUiEvent
         object NavigateToRegistration : LogInUiEvent
     }
 }

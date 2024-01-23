@@ -71,8 +71,8 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(FragmentLogInBinding::i
                 findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToRegistrationFragment())
             }
 
-            is LogInViewModel.LogInUiEvent.NavigateToHome -> {
-                findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToHomeFragment())
+            is LogInViewModel.LogInUiEvent.NavigateToMealsByNameFragment -> {
+                findNavController().navigate(LogInFragmentDirections.actionLogInFragmentToMealsByNameFragment())
             }
         }
 
