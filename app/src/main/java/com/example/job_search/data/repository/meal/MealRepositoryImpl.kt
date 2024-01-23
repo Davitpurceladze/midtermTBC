@@ -6,6 +6,7 @@ import com.example.job_search.data.mapper.base.asResource
 import com.example.job_search.data.mapper.meal.toDomain
 import com.example.job_search.data.service.meal.MealService
 import com.example.job_search.domein.model.meal.GetMeal
+import com.example.job_search.domein.model.meal.GetMealByIngredients
 import com.example.job_search.domein.repository.meal.MealRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -34,11 +35,11 @@ class MealRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getMealByIngredients(ingredient: String): Flow<Resource<List<GetMeal>>> {
+    override suspend fun getMealByIngredients(ingredient: String): Flow<Resource<List<GetMealByIngredients>>> {
         return handleMealResponse.safeApiCall {
             mealService.getMealByIngredients(ingredient = ingredient)
         }.asResource {
-            it.map {
+            it.meals.map {
                 it.toDomain()
             }
         }
@@ -48,7 +49,7 @@ class MealRepositoryImpl @Inject constructor(
         return handleMealResponse.safeApiCall {
             mealService.getMealById(id = id)
         }.asResource {
-            it.map {
+            it.meals.map {
                 it.toDomain()
             }
         }

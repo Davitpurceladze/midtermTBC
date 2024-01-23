@@ -1,4 +1,4 @@
-package com.example.job_search.presentation.state.home
+package com.example.job_search.presentation.state.meals
 
 import com.example.job_search.presentation.model.Meal
 

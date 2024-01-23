@@ -6,7 +6,7 @@ import com.example.job_search.data.common.Resource
 import com.example.job_search.domein.usecase.meal.GetMealByName
 import com.example.job_search.presentation.event.mealByName.MealByNameEvent
 import com.example.job_search.presentation.mapper.meal.toPresenter
-import com.example.job_search.presentation.state.home.MealsState
+import com.example.job_search.presentation.state.meals.MealsState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +25,7 @@ class MealsByNameViewModel @Inject constructor(
 
     fun onEvent(event: MealByNameEvent) {
         when (event) {
-            is MealByNameEvent.fetchMealByName -> fetchMealByName(name = event.name)
+            is MealByNameEvent.FetchMealByName -> fetchMealByName(name = event.name)
         }
     }
 

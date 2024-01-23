@@ -8,7 +8,7 @@ import com.example.job_search.databinding.FragmentHomeBinding
 import com.example.job_search.presentation.base.BaseFragment
 import com.example.job_search.presentation.event.home.HomeEvents
 import com.example.job_search.presentation.extension.loadImage
-import com.example.job_search.presentation.state.home.MealsState
+import com.example.job_search.presentation.state.meals.MealsState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

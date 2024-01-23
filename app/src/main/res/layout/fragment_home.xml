@@ -18,6 +18,8 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMealName"
         android:gravity="center"
+        android:textSize="21sp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:lines="5"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvMealName" />
@@ -39,8 +42,10 @@
         android:id="@+id/btnFetchRandomMeal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
         android:text="Get Random Meal"
+        android:textColor="@color/title"
+        android:textSize="19sp"
+        android:background="@drawable/button_meal_details_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -1,17 +1,16 @@
-package com.example.job_search.presentation.screen.mealsByName
+package com.example.job_search.presentation.screen.mealsByIngredients
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.job_search.databinding.FragmentMealsByNameBinding
 import com.example.job_search.databinding.ItemMealByNameLayoutBinding
 import com.example.job_search.presentation.extension.loadImage
 import com.example.job_search.presentation.model.Meal
+import com.example.job_search.presentation.model.MealByIngredients
 
-class MealsByNameRecyclerAdapter: ListAdapter<Meal, MealsByNameRecyclerAdapter.MealViewHolder>(MealsDiffUtil()) {
-
+class MealsByIngredientsRecyclerAdapter: ListAdapter<MealByIngredients, MealsByIngredientsRecyclerAdapter.MealViewHolder>(MealsByIngredientDiffUtil()) {
 
     private var onMealDetailsClickListener: ((id: String) -> Unit)? = null
 
@@ -19,8 +18,8 @@ class MealsByNameRecyclerAdapter: ListAdapter<Meal, MealsByNameRecyclerAdapter.M
         onMealDetailsClickListener = listener
     }
 
-    inner class MealViewHolder(private val binding: ItemMealByNameLayoutBinding ) : RecyclerView.ViewHolder(binding.root) {
-        private lateinit var item: Meal
+    inner class MealViewHolder(private val binding: ItemMealByNameLayoutBinding): RecyclerView.ViewHolder(binding.root){
+        private lateinit var item: MealByIngredients
 
         fun bind() {
             item = currentList[adapterPosition]
@@ -32,10 +31,7 @@ class MealsByNameRecyclerAdapter: ListAdapter<Meal, MealsByNameRecyclerAdapter.M
                 onMealDetailsClickListener?.invoke(item.idMeal)
             }
         }
-    }
 
-    override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
-        holder.bind()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MealViewHolder(
@@ -46,12 +42,16 @@ class MealsByNameRecyclerAdapter: ListAdapter<Meal, MealsByNameRecyclerAdapter.M
         )
     )
 
-    class MealsDiffUtil : DiffUtil.ItemCallback<Meal>() {
-        override fun areItemsTheSame(oldItem: Meal, newItem: Meal): Boolean {
+    override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
+        holder.bind()
+    }
+
+    class MealsByIngredientDiffUtil : DiffUtil.ItemCallback<MealByIngredients>() {
+        override fun areItemsTheSame(oldItem: MealByIngredients, newItem: MealByIngredients): Boolean {
             return oldItem.idMeal == newItem.idMeal
         }
 
-        override fun areContentsTheSame(oldItem: Meal, newItem: Meal): Boolean {
+        override fun areContentsTheSame(oldItem: MealByIngredients, newItem: MealByIngredients): Boolean {
             return oldItem == newItem
         }
     }

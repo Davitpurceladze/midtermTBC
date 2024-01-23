@@ -43,10 +43,27 @@
         android:id="@+id/mealsByIngredientsFragment"
         android:name="com.example.job_search.presentation.screen.mealsByIngredients.MealsByIngredientsFragment"
         android:label="fragment_meals_by_ingredients"
-        tools:layout="@layout/fragment_meals_by_ingredients" />
+        tools:layout="@layout/fragment_meals_by_ingredients" >
+        <action
+            android:id="@+id/action_mealsByIngredientsFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mealsByNameFragment"
         android:name="com.example.job_search.presentation.screen.mealsByName.MealsByNameFragment"
         android:label="fragment_meals_by_name"
-        tools:layout="@layout/fragment_meals_by_name" />
+        tools:layout="@layout/fragment_meals_by_name" >
+        <action
+            android:id="@+id/action_mealsByNameFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.example.job_search.presentation.screen.mealDetails.MealDetailsFragment"
+        android:label="fragment_meal_details"
+        tools:layout="@layout/fragment_meal_details" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -1,10 +1,10 @@
-package com.example.job_search.presentation.screen.home
+package com.example.job_search.presentation.screen.mealDetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.job_search.data.common.Resource
-import com.example.job_search.domein.usecase.meal.GetSingleRandomMealUseCase
-import com.example.job_search.presentation.event.home.HomeEvents
+import com.example.job_search.domein.usecase.meal.GetMealById
+import com.example.job_search.presentation.event.mealDetails.MealDetailsEvent
 import com.example.job_search.presentation.mapper.meal.toPresenter
 import com.example.job_search.presentation.state.meals.MealsState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,37 +16,36 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
-    private val getSingleRandomMealUseCase: GetSingleRandomMealUseCase
+class MealDetailsViewModel @Inject constructor(
+    private val getMealByIdUseCase: GetMealById
 ) : ViewModel() {
 
-    private val _mealsState = MutableStateFlow(MealsState())
-    val mealsState: StateFlow<MealsState> = _mealsState.asStateFlow()
+    private val _mealDetailsState = MutableStateFlow(MealsState())
+    val mealDetailsState: StateFlow<MealsState> = _mealDetailsState.asStateFlow()
 
-    fun onEvent(event: HomeEvents) {
-        when (event) {
-            is HomeEvents.FetchMeal -> fetchMeal()
+    fun onEvent(event:MealDetailsEvent) {
+        when( event) {
+            is MealDetailsEvent.FetchMealById -> fetchMealById(id = event.id)
         }
     }
 
-
-    private fun fetchMeal() {
+    private fun fetchMealById(id: String) {
         viewModelScope.launch {
-            getSingleRandomMealUseCase().collect {
+            getMealByIdUseCase(id).collect{
                 when (it) {
-                    is Resource.Loading -> _mealsState.update { currentState ->
+                    is Resource.Loading -> _mealDetailsState.update { currentState ->
                         currentState.copy(
                             isLoading = it.isLoading
                         )
                     }
 
-                    is Resource.Failure -> _mealsState.update { currentState ->
+                    is Resource.Failure -> _mealDetailsState.update { currentState ->
                         currentState.copy(
                             errorMessage = it.errorMessage
                         )
                     }
 
-                    is Resource.Success -> _mealsState.update { currentState ->
+                    is Resource.Success -> _mealDetailsState.update { currentState ->
                         currentState.copy(
                             meal = it.result.map {
                                 it.toPresenter()

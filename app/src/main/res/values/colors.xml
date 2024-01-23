@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bottom_navigation">#8DC3D144</color>
+    <color name="title">#002C0D</color>
+    <color name="button_style">#94BDCF14</color>
+
+
 </resources>
